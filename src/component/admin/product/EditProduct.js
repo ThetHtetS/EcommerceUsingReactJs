@@ -69,7 +69,6 @@ const handleChangeFile = e => {
           } 
         }) },[]);
     
-    
     const handleInput =(e)=>
         {
           const target = e.target;

@@ -37,7 +37,7 @@ prod =  product.map((i)=> {return(
         <div className="container-fluid mt-5">
         <div className="card border">    
         i am user porduct
-      
+        {prod}
          </div>
         </div>
 

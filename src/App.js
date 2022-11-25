@@ -1,5 +1,5 @@
 
-import './App.css';
+import './app.css';
 
 import { BrowserRouter,Routes, Route} from "react-router-dom";
 import Login from './component/Auth/login';
@@ -28,12 +28,12 @@ import OrderHistory from './component/admin/order/history';
 import Navi from './component/Auth/Nav';
 import Home from './component/User/home';
 import ProductQty from './component/admin/product/ProductQty';
-import Profit from './component/admin/profit/profit';
-import Profi from './component/admin/profit/aa';
+//import Profit from './component/admin/profit/profit';
+import Profit from './component/admin/profit/aa';
 
 function App() {
  
-  axios.defaults.headers.post['Content-type']='multipart/form-data';
+ // axios.defaults.headers.post['Content-type']='multipart/form-data';
   axios.defaults.headers.post['Accept']='application/json';
   axios.defaults.headers.post['boundary']=" + Math.random().toString().substr(2)";
   axios.defaults.withCredentials = true;
@@ -48,7 +48,8 @@ function App() {
     <div className="App">
 
 
-      <Routes>
+<BrowserRouter>
+<Routes>
         <Route path='/' element={<Navi />} >
           <Route path='/home' element={<Home />} />
            <Route path='/login' element={<Login />}/>
@@ -74,12 +75,12 @@ function App() {
           <Route path='edit-product/:id' element={<EditProduct />} />
           <Route path='detail/:id' element={<Detail />} />
           <Route path='order-history' element={<OrderHistory />} />
-          <Route path='prof' element={<Profi />} />
+          <Route path='prof' element={<Profit />} />
           <Route path='profit' element={<Profit />} />
         </Route>
         </Route>
-        
-      </Routes>
+       </Routes>
+      </BrowserRouter>
      
     </div>
   );

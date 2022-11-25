@@ -1,6 +1,6 @@
 import React, {useState, useContext, useEffect} from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //import { CartContext } from "./CartContext";
 import axios from "axios";
