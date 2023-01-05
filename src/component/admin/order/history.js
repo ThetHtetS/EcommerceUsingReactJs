@@ -6,7 +6,7 @@ const OrderHistory=()=>{
    const[loading, setLoading]= useState(true);
    useEffect(() => {
  
-    axios.get(`http://localhost/laravel/blog/public/api/view-orders-history`).then(res=>{
+    axios.get(`http://localhost/laravel/public/api/view-orders-history`).then(res=>{
     
         if(res.status===200){
         

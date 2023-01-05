@@ -12,7 +12,7 @@ const EditCategory =()=>{
    
      
 useEffect(() => {
-    axios.get(`http://localhost/laravel/blog/public/api/edit-category/${id}`).then(res=>{
+    axios.get(`http://localhost/laravel/public/api/edit-category/${id}`).then(res=>{
         
         if(res.status===200){
         setCat(res.data.category);

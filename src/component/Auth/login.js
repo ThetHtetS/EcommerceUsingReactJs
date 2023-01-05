@@ -28,8 +28,8 @@ const Login =()=>{
                    'password': input.password
     }
       e.preventDefault();
-      axios.get('http://localhost/laravel/blog/public/sanctum/csrf-cookie').then(response => {
-        axios.post('http://localhost/laravel/blog/public/api/login', data)
+      axios.get('http://localhost/laravel/public/sanctum/csrf-cookie').then(response => {
+        axios.post('http://localhost/laravel/public/api/login', data)
         .then(function (response) {
           if(response.data.status ===200){
             localStorage.setItem('auth_token', response.data.token);

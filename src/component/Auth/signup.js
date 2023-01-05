@@ -17,8 +17,8 @@ const SignUp =()=>{
   console.log(input);
  const signUp =(e)=>{
    e.preventDefault();
-   axios.get('http://localhost/laravel/blog/public/sanctum/csrf-cookie').then(response => {
-    axios.post('http://localhost/laravel/blog/public/api/register', input)
+   axios.get('http://localhost/laravel/public/sanctum/csrf-cookie').then(response => {
+    axios.post('http://localhost/laravel/public/api/register', input)
     .then(function (response) {
       if(response.data.status ===200){
         localStorage.setItem('auth_token', response.data.token);

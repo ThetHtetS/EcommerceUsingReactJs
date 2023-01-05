@@ -9,7 +9,7 @@ const Detail =()=>{
     const id= params.id;
     
 useEffect(() => {
-    axios.get(`http://localhost/laravel/blog/public/api/detail/${id}`).then(res=>{
+    axios.get(`http://localhost/laravel/public/api/detail/${id}`).then(res=>{
         
         if(res.status===200){
         setOrder(res.data.data);
@@ -28,7 +28,7 @@ const handleSubmit=(e, id)=>{
 
 const data={'status': 1}
 e.preventDefault();
-  axios.put(`http://localhost/laravel/blog/public/api/updatestatus/${id}`, data).then(res=>{
+  axios.put(`http://localhost/laravel/public/api/updatestatus/${id}`, data).then(res=>{
         
     if(res.status===200){
    

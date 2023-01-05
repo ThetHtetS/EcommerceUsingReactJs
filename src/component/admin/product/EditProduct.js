@@ -50,7 +50,7 @@ const handleChangeFile = e => {
      const id= params.id;
    
     useEffect(() => {
-     axios.get(`http://localhost/laravel/blog/public/api/edit-product/${id}`).then(res=>{
+     axios.get(`http://localhost/laravel/public/api/edit-product/${id}`).then(res=>{
         if(res.status===200){
         setInput(res.data.product);
         setLoading(false);
@@ -60,7 +60,7 @@ const handleChangeFile = e => {
         
      const [category, setCategory]= useState([]);
       useEffect(() => {
-      axios.get('http://localhost/laravel/blog/public/api/categorylist').then(res=>{
+      axios.get('http://localhost/laravel/public/api/categorylist').then(res=>{
           
           if(res.status===200){
            
@@ -97,7 +97,7 @@ const handleChangeFile = e => {
            status:input.status,
             };
        
-        axios.post(`http://localhost/laravel/blog/public/api/edit-product/${id}`, Data ).then(res=>{  
+        axios.post(`http://localhost/laravel/public/api/edit-product/${id}`, Data ).then(res=>{  
           if(res.data.status===200)
           {
          alert(res.data.message); 

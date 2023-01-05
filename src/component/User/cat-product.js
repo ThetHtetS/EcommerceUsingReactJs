@@ -13,7 +13,7 @@ const CatProduct=()=>{
     
     useEffect(() => {
  
-        axios.get(`http://localhost/laravel/blog/public/api/slug/${slug}`).then(res=>{
+        axios.get(`http://localhost/laravel/public/api/slug/${slug}`).then(res=>{
         
             if(res.status===200){
             
@@ -30,7 +30,7 @@ const CatProduct=()=>{
 const AddtoCart = (e, id) =>{
     var cart ={product_id: id, qty: 1 };
 
-axios.post('http://localhost/laravel/blog/public/api/add-to-cart', cart).then(res=>{
+axios.post('http://localhost/laravel/public/api/add-to-cart', cart).then(res=>{
         
     if(res.data.status===200){
         alert(res.data.message);         

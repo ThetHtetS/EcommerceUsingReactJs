@@ -9,7 +9,7 @@ const ViewCart =()=>{
     const[loading, setLoading]= useState(true);
     
     useEffect(() => {
-        axios.get(`http://localhost/laravel/blog/public/api/view-cart`).then(res=>{
+        axios.get(`http://localhost/laravel/public/api/view-cart`).then(res=>{
         
             if(res.status===200){
               console.log(res.data.cartitem);
@@ -29,7 +29,7 @@ const ViewCart =()=>{
 
     const updateQuantity = (card_id, scope) =>
      {
-      axios.put(`http://localhost/laravel/blog/public/api/cart-updatequantity/${card_id}/${scope}`).then(res=>{
+      axios.put(`http://localhost/laravel/public/api/cart-updatequantity/${card_id}/${scope}`).then(res=>{
         
         if(res.status===200){
             console.log(res.data.message); 
@@ -42,7 +42,7 @@ const ViewCart =()=>{
 
     const DeleteItem=(e, id)=>{
         const thisClicked= e.currentTarget;
-         axios.post(`http://localhost/laravel/blog/public/api/delete-item/${id}`).then(res=>{
+         axios.post(`http://localhost/laravel/public/api/delete-item/${id}`).then(res=>{
 
         if(res.status===200){
             alert(res.data.message); 
@@ -64,7 +64,7 @@ console.log(cart);
      
       <div className="row mx-auto ">
         <div className="col-md-3 me-md-4 my-2 me-lg-1 px-5" >
-           <img src={`http://localhost/laravel/blog/public/${i.product.image}`} className="" alt="image"/>
+           <img src={`http://localhost/laravel/public/${i.product.image}`} className="" alt="image"/>
         </div>
          <div className="col-md-2 my-md-5 py-md-3 px-5">
        <span className="fw-bold"> {i.product.name} </span><br />

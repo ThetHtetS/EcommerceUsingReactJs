@@ -27,8 +27,8 @@ const Category= ()=>{
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.get('http://localhost/laravel/blog/public/sanctum/csrf-cookie').then(response => {
-      axios.post('http://localhost/laravel/blog/public/api/add-category', input)
+    axios.get('http://localhost/laravel/public/sanctum/csrf-cookie').then(response => {
+      axios.post('http://localhost/laravel/public/api/add-category', input)
       .then(function (response) {
         if(response.data.status ===200){
           alert(response.data.message);

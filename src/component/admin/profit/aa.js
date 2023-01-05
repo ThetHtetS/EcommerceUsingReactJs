@@ -45,7 +45,7 @@ const [date,setDate] = useState([]);
           }
           console.log(date);       
       //  console.log(date);
-        /*axios.post(`http://localhost/laravel/blog/public/api/view-orders-history/${date}`).then(res=>{
+        /*axios.post(`http://localhost/laravel/public/api/view-orders-history/${date}`).then(res=>{
     
             if(res.status===200){
             

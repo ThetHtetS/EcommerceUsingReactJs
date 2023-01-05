@@ -11,7 +11,7 @@ const Navi =()=>{
    const [category, setCategory]= useState([]);
 
    useEffect(() => {
-       axios.get('http://localhost/laravel/blog/public/api/view-category').then(res=>{
+       axios.get('http://localhost/laravel/public/api/view-category').then(res=>{
            
            if(res.status===200){
             
@@ -49,20 +49,24 @@ const Navi =()=>{
     const name = target.name;
 
     setInput({...input, [name] : value});
-
+   
   }
 console.log(input);
 
-const handleSubmit=(e)=>{
+const submit=(e)=>{
   e.preventDefault();
 
-  axios.get('http://localhost/laravel/blog/public/sanctum/csrf-cookie').then(response => {
-    axios.post('http://localhost/laravel/blog/public/api/search', input)
+  axios.get('http://localhost/laravel/public/sanctum/csrf-cookie').then(response => {
+    axios.post('http://localhost/laravel/public/api/search', input)
     .then(function (response) {
       if(response.data.status ===200){
-        console.log(response.data.result);
+        //console.log(response.data.result);
     setProduct(response.data.result);
     setLoading(true);
+      }
+      else {
+        console.log("error")
+        //console.log(response)
       }
     })
 });
@@ -157,7 +161,7 @@ prod =  product.map((i)=> {return(
 <div  className="container mt-3 "> 
     <div className="row">
      <div className="col-lg-8 mx-auto ">
-      <form onSubmit={handleSubmit}>
+      <form onChange={submit}>
         <div>
           <div className="input-group shadow-sm">
           <div className="input-group-append">
@@ -177,7 +181,7 @@ prod =  product.map((i)=> {return(
             <input type='search' placeholder="Search Products..." name="search" onChange={handleSearch} className="form-control"/>
             <div className="input-group-append">
               
-          <button type="submit" className="btn btn-light">Search</button>
+          <button type="submit" onClick={submit} className="btn btn-light">Search</button>
          
              </div>
          

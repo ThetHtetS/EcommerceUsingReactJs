@@ -5,7 +5,7 @@ const CategoryList =()=>{
 const [category, setCategory]= useState([]);
 const [loading, setLoading]= useState(true);
 useEffect(() => {
-    axios.get('http://localhost/laravel/blog/public/api/view-category').then(res=>{
+    axios.get('http://localhost/laravel/public/api/view-category').then(res=>{
         if(res.status===200){
             setCategory(res.data.category);
            setLoading(false);
@@ -17,7 +17,7 @@ useEffect(() => {
 const deleteCategory=(e, id)=>{
   e.preventDefault();
  const thisClicked= e.currentTarget;
-  axios.post(`http://localhost/laravel/blog/public/api/delete-category/${id}`).then(res=>{ 
+  axios.post(`http://localhost/laravel/public/api/delete-category/${id}`).then(res=>{ 
     if(res.status===200){
    thisClicked.closest("tr").remove();
     } 

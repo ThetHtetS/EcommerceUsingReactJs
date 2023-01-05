@@ -6,7 +6,7 @@ const RequireAuth =()=>{
    const [load, setLoad]= useState(true);
    let navigate = useNavigate();
    useEffect(() => {
-    axios.get('http://localhost/laravel/blog/public/api/checkingAuth').then(res=>{
+    axios.get('http://localhost/laravel/public/api/checkingAuth').then(res=>{
       
         if(res.status===200){
             setAuth(true);

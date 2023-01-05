@@ -5,7 +5,7 @@ const ViewProduct=()=>{
    const [product, setProduct]= useState(); 
  const [loading, setLoading]= useState(true);
 useEffect(() => {
-    axios.get('http://localhost/laravel/blog/public/api/view-product').then(res=>{
+    axios.get('http://localhost/laravel/public/api/view-product').then(res=>{
         
         if(res.status===200){
         
@@ -22,7 +22,7 @@ useEffect(() => {
 const deleteProduct =(e, id)=>{
     e.preventDefault();
     const thisClicked= e.currentTarget;
-     axios.post(`http://localhost/laravel/blog/public/api/delete-product/${id}`).then(res=>{ 
+     axios.post(`http://localhost/laravel/public/api/delete-product/${id}`).then(res=>{ 
        if(res.status===200){
       thisClicked.closest('tr').remove();
        } 
@@ -40,7 +40,7 @@ prod =  product.map((i)=> {return(
 <td >{i.category_id}</td>
 <td>{i.name}</td>
 <td>{i.seeling_price}</td>
-<td><img src={`http://localhost/laravel/blog/public/${i.image}`} width='50px' alt="image"/></td>
+<td><img src={`http://localhost/laravel/public/${i.image}`} width='50px' alt="image"/></td>
  <td><Link to={`/admin/edit-product/${i.id}`}  className="btn btn-success btn-sm">Edit</Link></td>
 <td><button type="button" onClick={(e) => deleteProduct(e, i.id)} className="btn btn-danger btn-sm">Delete</button></td>
 <td><Link to={`/admin/detail/${i.id}`}  className="btn btn-success btn-sm">view</Link></td>

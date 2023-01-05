@@ -6,7 +6,7 @@ const ProductQty =()=>{
     const [product, setProduct]= useState(); 
  const [loading, setLoading]= useState(true);
 useEffect(() => {
-    axios.get('http://localhost/laravel/blog/public/api/product-qty').then(res=>{
+    axios.get('http://localhost/laravel/public/api/product-qty').then(res=>{
         
         if(res.status===200){
         

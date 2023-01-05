@@ -6,7 +6,7 @@ const AddProduct= ()=>{
   const [category, setCategory]= useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost/laravel/blog/public/api/view-category').then(res=>{
+        axios.get('http://localhost/laravel/public/api/view-category').then(res=>{
             
             if(res.status===200){
              
@@ -124,7 +124,7 @@ const [input, setInput]= useState(
    status:input.status,
     };
     
-axios.post('http://localhost/laravel/blog/public/api/add-product', Data)
+axios.post('http://localhost/laravel/public/api/add-product', Data)
 .then(function (response) {
   if(response.data.status ===200){
     alert(response.data.message);

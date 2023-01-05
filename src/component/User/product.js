@@ -5,7 +5,7 @@ const UserProduct=()=>{
    const [product, setProduct]= useState(); 
  const [loading, setLoading]= useState(true);
 useEffect(() => {
-    axios.get('http://localhost/laravel/blog/public/api/view-product').then(res=>{
+    axios.get('http://localhost/laravel/public/api/view-product').then(res=>{
         
         if(res.status===200){
         

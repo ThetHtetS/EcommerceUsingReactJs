@@ -10,7 +10,7 @@ const Profit=()=>{
    const [date,setDate]= useState('');
    useEffect(() => {
  
-    axios.post(`http://localhost/laravel/blog/public/api/view-orders-history/${date}`).then(res=>{
+    axios.post(`http://localhost/laravel/public/api/view-orders-history/${date}`).then(res=>{
     
         if(res.status===200){
         
